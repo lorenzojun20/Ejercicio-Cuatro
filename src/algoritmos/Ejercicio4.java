@@ -112,7 +112,7 @@ public class Ejercicio4 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,61 +123,49 @@ public class Ejercicio4 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtMetrosCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMetrosCKeyTyped
-       char c=evt.getKeyChar(); 
-             
-         
-          if(!Character.isDigit(c)) { 
-              getToolkit().beep(); 
-               
-              evt.consume(); }
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+        }
     }//GEN-LAST:event_txtMetrosCKeyTyped
 
     private void txtCuotaIniKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCuotaIniKeyTyped
-        char c=evt.getKeyChar(); 
-             
-         
-          if(!Character.isDigit(c)) { 
-              getToolkit().beep(); 
-               
-              evt.consume(); }
+
     }//GEN-LAST:event_txtCuotaIniKeyTyped
 
     private void txtCuota12KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCuota12KeyTyped
-         char c=evt.getKeyChar(); 
-             
-         
-          if(!Character.isDigit(c)) { 
-              getToolkit().beep(); 
-               
-              evt.consume(); }
+
     }//GEN-LAST:event_txtCuota12KeyTyped
 
     private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
-       String ci,c12,vmc;
+        String ci, c12, vmc;
         int metrosc;
-       double op3=0,op2=0,op1=0;
-       if(txtMetrosC.getText().trim().isEmpty()){
-           JOptionPane.showMessageDialog(this, "Digite Metros Cuadrados","ERROR",JOptionPane.ERROR_MESSAGE);
-           txtMetrosC.requestFocusInWindow();
-       }else{
-           metrosc=Integer.parseInt(txtMetrosC.getText());
-           op3=80000*metrosc;
-           op1=(op3*35)/100;
-           op2=op1/12;
-       }
-       ci=String.valueOf(op1);
-       txtCuotaIni.setText("$"+ci);
-       c12=String.valueOf(op2);
-       txtCuota12.setText("$"+c12);
-       vmc=String.valueOf(op3);
-       txtValorMC.setText("$"+vmc);
+        double op3 = 0, op2 = 0, op1 = 0;
+        if (txtMetrosC.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Digite Metros Cuadrados", "ERROR", JOptionPane.ERROR_MESSAGE);
+            txtMetrosC.requestFocusInWindow();
+        } else {
+            metrosc = Integer.parseInt(txtMetrosC.getText());
+            op3 = 80000 * metrosc;
+            op1 = (op3 * 35) / 100;
+            op2 = op1 / 12;
+        }
+        ci = String.valueOf(op1);
+        txtCuotaIni.setText("$" + ci);
+        c12 = String.valueOf(op2);
+        txtCuota12.setText("$" + c12);
+        vmc = String.valueOf(op3);
+        txtValorMC.setText("$" + vmc);
     }//GEN-LAST:event_cmdCalcularActionPerformed
 
     private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
         txtMetrosC.setText("");
         txtCuotaIni.setText("");
         txtCuota12.setText("");
-        
+
         txtMetrosC.requestFocusInWindow();
     }//GEN-LAST:event_cmdBorrarActionPerformed
 
